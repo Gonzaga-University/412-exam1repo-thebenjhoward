@@ -1,0 +1,11 @@
+[Unit]
+Description=Removes .monitors file on shutdown. Enables only attempting an action once per boot.
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/bin/rm /home/benh/.config/.monitors
+
+[Install]
+WantedBy=multi-user.target
+
